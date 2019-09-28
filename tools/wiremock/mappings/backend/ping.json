@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/ping"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "/backend/pong.json",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+java -jar wiremock-standalone-2.24.1.jar --https-port 9286 --port 9285 --local-response-templating --container-threads 10 --async-response-enabled true --async-response-threads 10 --print-all-network-traffic --no-request-journal -v
