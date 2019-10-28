@@ -1,0 +1,49 @@
+{
+  "categories": [
+    {
+      "name": "Buy & Sell",
+      "imgUrl": "https://d1qq9lwf5ow8iz.cloudfront.net/live-images-1/ImageDetail_f613ebd8-3cce-427a-9213-d03b32ab7492_Medium",
+      "id": 1
+    },
+    {
+      "name": "Tech",
+      "imgUrl": "https://img.etimg.com/thumb/msid-69511454,width-300,imgsize-235904,resizemode-4/tech-policy.jpg",
+      "id": 2
+    },
+    {
+      "name": "IBS",
+      "imgUrl": "https://live.staticflickr.com/3679/12945362733_53d27ee2ac_c.jpg",
+      "id": 3
+    },
+    {
+      "name": "Infopark",
+      "imgUrl": "https://d28l1wisvpjs3f.cloudfront.net/fit-in/640x640/images/orig/eVzIChwUurZSSApVcOZc.jpg",
+      "id": 4
+    },
+    {
+      "name": "Travel",
+      "imgUrl": "https://www.abc.net.au/cm/rimage/11097260-16x9-xlarge.jpg?v=3",
+      "id": 5
+    },
+    {
+      "name": "Sports",
+      "imgUrl": "https://www.thecompleteuniversityguide.co.uk/media/4928283/istock-949190756.jpg",
+      "id": 6
+    },
+	{
+      "name": "Vehicles",
+      "imgUrl": "https://techcrunch.com/wp-content/uploads/2019/10/MIT-Shadow-Sensing_0.jpg?w=1390&crop=1",
+      "id": 7
+    },
+	{
+      "name": "Photography",
+      "imgUrl": "https://cdn.mos.cms.futurecdn.net/gvQ9NhQP8wbbM32jXy4V3j-320-80.jpg",
+      "id": 8
+    },
+	{
+      "name": "Miscellaneous",
+      "imgUrl": "http://www.cynanotary.com/uploads/2/6/5/6/26565061/s578582257824568881_p56_i2_w250.png",
+      "id": 9
+    }
+  ]
+}

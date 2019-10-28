@@ -1,0 +1,27 @@
+.Tile-panel {
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ff0000;
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .Tile {
+    float: left;
+    font-size: 12px;
+    width: 33%;
+  }
+  
+  .Tile-row:after {
+    clear: both;
+    content: "";
+    display: table;
+    width: 100%;
+  }
+
+  .Tile-images {
+    border: 1% solid #ddd;
+    border-radius: 2%;
+    width: 30%;
+  }
