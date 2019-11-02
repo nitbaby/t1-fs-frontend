@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/Tile.css';
 
+const shortid = require('shortid');
+
 class Tile extends React.Component {
     render() {
         return (
@@ -33,9 +35,8 @@ class TilePanel extends React.Component {
             })
     }
     render() {
-        var key = 0;
         const tileRows = splitArray(this.state.categories, 3).map(arrays => {
-            return (<TileRow key={key++} rows={arrays} />);
+            return (<TileRow key={shortid.generate()} rows={arrays} />);
         })
         return (
             <div className="Tile-panel">
@@ -47,9 +48,8 @@ class TilePanel extends React.Component {
 
 class TileRow extends React.Component {
     render() {
-        var key = 0;
         const rowElems = this.props.rows.map(row => {
-            return (<Tile key={key++} cat={row} />)
+            return (<Tile key={shortid.generate()} cat={row} />)
         });
         return (
             <div className="Tile-row">
