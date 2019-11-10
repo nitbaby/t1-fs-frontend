@@ -6,9 +6,12 @@ const shortid = require('shortid');
 class Tile extends React.Component {
     render() {
         return (
-            <div className="Tile">
+            <div className="Tile col-sm-4">
                 <figure>
-                    <img src={this.props.cat.imgUrl} className="Tile-images" alt="Not found." />
+
+                    <div className="tile-img"
+                      style={{backgroundImage: `url(${this.props.cat.imgUrl})`}}>
+                        </div>
                     <figcaption>{this.props.cat.name}</figcaption>
                 </figure>
             </div>
@@ -39,7 +42,7 @@ class TilePanel extends React.Component {
             return (<TileRow key={shortid.generate()} rows={arrays} />);
         })
         return (
-            <div className="Tile-panel">
+            <div className="Tile-panel container">
                 {tileRows}
             </div>
         );
@@ -52,7 +55,7 @@ class TileRow extends React.Component {
             return (<Tile key={shortid.generate()} cat={row} />)
         });
         return (
-            <div className="Tile-row">
+            <div className="Tile-row row">
                 {rowElems}
             </div>
         );

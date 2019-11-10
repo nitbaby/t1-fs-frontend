@@ -5,3 +5,8 @@
     display: flex;
     flex-direction: row;
 }
+
+.post-card{
+  margin-top: 20px;
+  padding: 20px;
+}
