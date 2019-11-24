@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import TilePanel from './component/Tile'
-import PostsPanel from './component/Post'
-import Header from './component/Header'
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
-      <Header/>    
+      <Header/>
     </div>
   );
 }

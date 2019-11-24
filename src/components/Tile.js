@@ -8,7 +8,6 @@ class Tile extends React.Component {
         return (
             <div className="Tile col-sm-4">
                 <figure>
-
                     <div className="tile-img"
                       style={{backgroundImage: `url(${this.props.cat.imgUrl})`}}>
                         </div>
