@@ -5,8 +5,8 @@ import PostsPanel from '../components/PostsPanel'
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddClick: (title, description, category) => {
-      dispatch(addPost({title, description, category}))
+    onAddClick: (post) => {
+      dispatch(addPost(post))
     }
   }
 }

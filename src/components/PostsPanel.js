@@ -14,8 +14,8 @@ class PostsPanel extends React.Component {
         };
     }
 
-    addPost(title, desc, category) {
-        this.props.onAddClick(title, desc, category);
+    addPost(post) {
+        this.props.onAddClick(post);
     }
 
     render() {
@@ -23,7 +23,7 @@ class PostsPanel extends React.Component {
             <div className="container">
             <div className="row">
               <div className="col-12 mt-3">
-                <PostInput onClick={(title, desc, category) => this.addPost(title, desc, category)} />
+                <PostInput onClick={(post) => this.addPost(post)} />
               </div>
             </div>
             <hr/>

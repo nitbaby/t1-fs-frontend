@@ -16,9 +16,6 @@ class Header extends React.Component {
                   <NavLink className="nav-link" to="/posts">All posts</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/tile">Tiles</NavLink>
-                </li>
-                <li className="nav-item">
                   <NavLink className="nav-link" to="/categories">Categories</NavLink>
                 </li>
                 <li className="nav-item">

@@ -1,12 +1,14 @@
 import React from 'react'
+const shortid = require('shortid');
 
 class PostInput extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { title: '', desc: '', category:'' };
+        this.state = { title: '', desc: '', category:'', image: '' };
 
         this.handleChangeTextArea = this.handleChangeTextArea.bind(this);
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
+        this.handleChangeImage = this.handleChangeImage.bind(this);
         this.handleCategoryChange = this.handleCategoryChange.bind(this);
     }
 
@@ -20,11 +22,15 @@ class PostInput extends React.Component {
     handleCategoryChange(event) {
       this.setState({ category: event.target.value })
     }
+    handleChangeImage(event) {
+        this.setState({ image: event.target.value });
+    }
     clearValues() {
       this.setState({
         title: '',
         desc: '',
-        category: ''
+        category: '',
+        image: ''
       });
     }
     setSuccessAlert() {
@@ -38,8 +44,15 @@ class PostInput extends React.Component {
       }, 2000);
     }
     onPostClick(event) {
+      console.log('dfs', shortid.generate());
       event.preventDefault();
-      this.props.onClick(this.state.title, this.state.desc, this.state.category);
+      this.props.onClick({
+        title: this.state.title,
+        desc: this.state.desc,
+        category: this.state.category,
+        image: this.state.image,
+        id: shortid.generate()
+      });
       this.clearValues();
       this.setSuccessAlert();
     }
@@ -68,6 +81,12 @@ class PostInput extends React.Component {
               </textarea>
             </div>
             <div className="form-group">
+              <label htmlFor="image">Image</label>
+              <input type="text" className="form-control" id="image" placeholder="Add an image url" required
+                onChange={this.handleChangeImage}
+                value={this.state.image}/>
+            </div>
+            <div className="form-group">
               <label htmlFor="cat-select">Category</label>
               <select className="form-control" id="cat-select"
                   value={this.state.category} onChange={this.handleCategoryChange}>
@@ -78,7 +97,7 @@ class PostInput extends React.Component {
                 <option value="4">Infopark</option>
                 <option value="5">Travel</option>
                 <option value="6">Sports</option>
-                <option value="7">Vehicale</option>
+                <option value="7">Vehicle</option>
                 <option value="8">Photography</option>
                 <option value="9">Miscellaneous</option>
               </select>
