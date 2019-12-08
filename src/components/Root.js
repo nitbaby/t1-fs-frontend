@@ -8,7 +8,6 @@ import About from './About'
 import PostDetail from './PostDetail'
 import PostsContainer from './PostsContainer'
 import PostsPanelContainer from './PostsPanelContainer'
-import Tile from './Tile'
 import App from '../App'
 
 const Root = ({ store }) => (
@@ -19,7 +18,7 @@ const Root = ({ store }) => (
       <Route path="/new" component={PostsPanelContainer} />
       <Route path="/posts" component={PostsContainer} />
       <Route path="/post/:id" component={PostDetail} />
-      <Route path="/categories" component={Tile} />
+      <Route path="/categories" component={Categories} />
       <Route path="/about" component={About} />
     </div>
   </Router>
