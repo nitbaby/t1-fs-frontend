@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { selectPost } from '../actions'
 import PostsPanel from '../components/PostsPanel'
+import CommentsSection from '../components/CommentsSection'
 import categories from '../services/Categories'
 
 class PostDetail extends React.Component {
@@ -40,9 +41,14 @@ class PostDetail extends React.Component {
                       </div>
 
                       <div className="row">
+                        <div className="col-12">
+                          <CommentsSection/>
+                        </div>
                       </div>
                     </div>
                 </div>
+              </div>
+              <div className="row">
               </div>
             </div>
           )
