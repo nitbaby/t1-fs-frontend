@@ -12,3 +12,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+img {
+  max-width: 100%;
+}
+
+
+.same-height{
+  height: calc(100% - 20px);
+}

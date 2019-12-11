@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #c0c0c0;
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/beige-tiles.png");
 }
 
 code {

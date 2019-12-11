@@ -8,7 +8,6 @@ class Tile extends React.Component {
         return (
             <div className="Tile col-sm-4">
                 <figure>
-
                     <div className="tile-img"
                       style={{backgroundImage: `url(${this.props.cat.imgUrl})`}}>
                         </div>
@@ -19,7 +18,7 @@ class Tile extends React.Component {
     }
 }
 
-class TilePanel extends React.Component {
+class Categories extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -76,4 +75,4 @@ function splitArray(array, split_size) {
     return tempArray;
 }
 
-export default TilePanel;
+export default Categories;
