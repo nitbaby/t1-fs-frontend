@@ -9,4 +9,11 @@
 .post-card{
   margin-top: 20px;
   padding: 20px;
+  cursor: pointer;
+}
+
+.created-on {
+  font-size: 14px;
+  font-style: italic;
+  color: #495057;
 }

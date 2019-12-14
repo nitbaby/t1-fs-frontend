@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux'
 
 const shortid = require('shortid');
 
@@ -10,7 +9,7 @@ class CommentsList extends React.Component {
     render() {
       const comments = this.props.comments.map((commentObj) => {
         return (
-          <div className="row">
+          <div className="row" key={shortid.generate()} >
             <div className="col-12 comment-wpr">
               <label className="font-weight-bold">{commentObj.username}</label>
               <p className="font-italic">{commentObj.comment}</p>

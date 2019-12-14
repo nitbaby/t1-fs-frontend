@@ -1,6 +1,10 @@
 # t1-fs-frontend
 A  repository for self learning React.
 
+Prerequisites:
+Install node version v12.13.0
+nvm version used v6.12.0
+
 Build:
 Install modules: npm install
 

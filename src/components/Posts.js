@@ -1,21 +1,26 @@
 import React from 'react';
 import Post from './Post';
 
-const shortid = require('shortid');
-
 class Posts extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    handlePostClick(post) {
-      console.log(post)
+    componentDidMount() {
+      this.props.onFetchAllPosts()
     }
+
+    handlePostClick(postId) {
+      this.props.history.push(`/post/${postId}`);
+    }
+
     render() {
         let posts;
-        if (this.props.posts.length) {
+        if (this.props.isFetching) {
+          posts = <div className="card col-12 p-3 mt-4">Loading...</div>
+        } else if (this.props.posts.length) {
           posts = this.props.posts.map(post => {
-              return (<Post key={shortid.generate()} post={post} onPostClick={(post)=>this.handlePostClick(post)}/>);
+              return (<Post key={post.id} post={post} onPostClick={(post)=>this.handlePostClick(post)}/>);
           });
         } else {
           posts = <div className="card col-12 p-3 mt-4">No posts found!</div>
