@@ -36,7 +36,6 @@ class PostDetail extends React.Component {
                           <p className="">{this.props.post.description}</p>
                           <label className="font-weight-bold">Category</label>
                           <p><Link className="" to={"/category/"+this.props.post.category}>{category}</Link></p>
-                          {/*<p>id: {this.props.post.id}</p>*/}
                         </div>
                       </div>
 
@@ -58,7 +57,7 @@ class PostDetail extends React.Component {
               <div className="row">
                 <div className="col-4">
                     <div className="card post-card">
-                      <p>Selected Post ID: 404 Post not found!</p>
+                      <p>404 Post not found!</p>
                     </div>
                 </div>
               </div>
