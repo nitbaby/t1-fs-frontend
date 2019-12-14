@@ -36,7 +36,6 @@ class PostDetail extends React.Component {
                           <p className="">{this.props.post.description}</p>
                           <label className="font-weight-bold">Category</label>
                           <p><Link className="" to={"/category/"+this.props.post.category}>{category}</Link></p>
-                          {/*<p>id: {this.props.post.id}</p>*/}
                         </div>
                       </div>
 
@@ -58,7 +57,7 @@ class PostDetail extends React.Component {
               <div className="row">
                 <div className="col-4">
                     <div className="card post-card">
-                      <p>Selected Post ID: 404 Post not found!</p>
+                      <p>404 Post not found!</p>
                     </div>
                 </div>
               </div>
@@ -70,14 +69,15 @@ class PostDetail extends React.Component {
 
 function getSelectedPost(posts) {
   const selectedPost = posts.filter((post) => post.isSelected === true);
-  // return selectedPost.length ? selectedPost[0] : {}
-  return {
-    id: "3513",
-    title: "asdfads",
-    description: "sample description",
-    category: "2",
-    image: "https://storage.googleapis.com/gd-wagtail-prod-assets/images/evolving_google_identity_2x.max-4000x2000.jpegquality-90.jpg"
-  }
+  return selectedPost.length ? selectedPost[0] : {}
+  // Use below lines to load details page without API connections
+  // return {
+  //   id: "3513",
+  //   title: "asdfads",
+  //   description: "sample description",
+  //   category: "2",
+  //   image: "https://storage.googleapis.com/gd-wagtail-prod-assets/images/evolving_google_identity_2x.max-4000x2000.jpegquality-90.jpg"
+  // }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -90,7 +90,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   return {
-    post: getSelectedPost(state.posts)
+    post: getSelectedPost(state.postsAsync.items)
   }
 }
 
