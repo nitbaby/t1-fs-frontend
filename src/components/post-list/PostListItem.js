@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import * as moment from 'moment'
-class Post extends React.Component {
+class PostListItem extends React.Component {
     render() {
       const createdDateTime = moment(this.props.post.createdDate).format("MMM Do YYYY, h:mm a");;
         return (
@@ -18,4 +18,4 @@ class Post extends React.Component {
         );
     }
 }
-export default Post;
+export default PostListItem;

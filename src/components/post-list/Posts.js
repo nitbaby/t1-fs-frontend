@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from './Post';
+import PostListItem from './PostListItem';
 
 class Posts extends React.Component {
     constructor(props) {
@@ -26,14 +26,14 @@ class Posts extends React.Component {
           posts = <div className="card col-12 p-3 mt-4">Loading...</div>
         } else if (this.props.posts.length) {
           posts = this.props.posts.map(post => {
-              return (<Post key={post.id} post={post} onPostClick={(post)=>this.handlePostClick(post)}/>);
+              return (<PostListItem key={post.id} post={post} onPostClick={(post)=>this.handlePostClick(post)}/>);
           });
         } else {
           posts = <div className="card col-12 p-3 mt-4">No posts found!</div>
         }
         return (
             <div className="container">
-              <div className="row">
+              <div className="row pb-5">
                   {posts}
               </div>
             </div>

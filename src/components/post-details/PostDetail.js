@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { selectPost } from '../actions'
-import PostsPanel from '../components/PostsPanel'
-import CommentsSection from '../components/CommentsSection'
-import categories from '../utils/Categories'
+import { selectPost } from '../../actions'
+import CommentsSection from '../comments/CommentsSection'
+import categories from '../../utils/Categories'
 
 class PostDetail extends React.Component {
     constructor(props) {
@@ -13,6 +12,7 @@ class PostDetail extends React.Component {
       this.props.onPostSelect(id);
       this.state = { selectedPostId: id};
     }
+    
     render() {
         const postId = (this.props.post && this.props.post.id) ? this.props.post.id : null;
         if (postId) {
@@ -70,14 +70,6 @@ class PostDetail extends React.Component {
 function getSelectedPost(posts) {
   const selectedPost = posts.filter((post) => post.isSelected === true);
   return selectedPost.length ? selectedPost[0] : {}
-  // Use below lines to load details page without API connections
-  // return {
-  //   id: "3513",
-  //   title: "asdfads",
-  //   description: "sample description",
-  //   category: "2",
-  //   image: "https://storage.googleapis.com/gd-wagtail-prod-assets/images/evolving_google_identity_2x.max-4000x2000.jpegquality-90.jpg"
-  // }
 }
 
 const mapDispatchToProps = dispatch => {

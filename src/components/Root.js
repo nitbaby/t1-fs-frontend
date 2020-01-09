@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Redirect } from 'react-router'
 import Categories from './Categories'
 import About from './About'
-import PostDetail from './PostDetail'
-import PostsContainer from './PostsContainer'
-import PostsPanelContainer from './PostsPanelContainer'
+import PostDetail from './post-details/PostDetail'
+import PostsContainer from './post-list/PostsContainer'
+import PostsPanelContainer from './new-post/PostsPanelContainer'
 import App from '../App'
 
 const Root = ({ store }) => (
