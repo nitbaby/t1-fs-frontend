@@ -34,7 +34,7 @@ function requestPosts() {
   }
 }
 
-function receivePosts(posts) {
+function receivePosts(posts, categoryId) {
   return {
     type: RECEIVE_POSTS,
     posts: posts.map((post) => (
@@ -44,14 +44,28 @@ function receivePosts(posts) {
         category: post.category,
         description: post.contentDescription,
         image: post.imageUrl,
-        createdDate: post.createDateTime
+        createdDate: post.createDateTime,
+        comments: getComments(post.comment)
+
       }
-    )),
+    )).filter((post) => (!categoryId || post.category == categoryId)),
     receivedAt: Date.now()
   }
 }
 
-export function fetchPosts() {
+
+function getComments(comments) {
+  if (comments && comments.length) {
+    return comments.map((comment) => ({
+      username: comment.userName,
+      comment: comment.description
+    }));
+  } else {
+    return [];
+  }
+}
+
+export function fetchPosts(categoryId) {
   // Thunk middleware knows how to handle functions.
   // It passes the dispatch method as an argument to the function,
   // thus making it able to dispatch actions itself.
@@ -82,7 +96,7 @@ export function fetchPosts() {
         // We can dispatch many times!
         // Here, we update the app state with the results of the API call.
 
-        dispatch(receivePosts(json))
+        dispatch(receivePosts(json, categoryId))
       )
   }
 }

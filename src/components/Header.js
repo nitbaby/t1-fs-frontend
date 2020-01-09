@@ -10,10 +10,10 @@ class Header extends React.Component {
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/new">Add new</NavLink>
+                  <NavLink className="nav-link" to="/posts/all">All posts</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/posts">All posts</NavLink>
+                  <NavLink className="nav-link" to="/new">Add new</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/categories">Categories</NavLink>

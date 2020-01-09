@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { addPost, addNewPost } from '../actions'
-import PostsPanel from '../components/PostsPanel'
+import { addPost, addNewPost } from '../../actions'
+import PostsPanel from './PostsPanel'
 
 
 const mapDispatchToProps = dispatch => {

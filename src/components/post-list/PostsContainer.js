@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { fetchPosts } from '../actions'
-import Posts from '../components/Posts'
+import { fetchPosts } from '../../actions'
+import Posts from './Posts'
 
 const mapStateToProps = state => {
   return {
@@ -11,8 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onFetchAllPosts: () => {
-      dispatch(fetchPosts())
+    onFetchAllPosts: (categoryId) => {
+      dispatch(fetchPosts(categoryId))
     }
   }
 }

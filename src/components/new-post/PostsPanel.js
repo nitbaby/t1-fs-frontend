@@ -1,6 +1,5 @@
 import React from 'react';
-import '../css/Post.css';
-import Post from './Post';
+import '../../css/Post.css';
 import PostInput from './PostInput';
 import { connect } from 'react-redux'
 
