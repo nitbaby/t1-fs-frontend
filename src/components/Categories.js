@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import '../css/Tile.css';
 
 const shortid = require('shortid');
@@ -7,12 +8,14 @@ class Tile extends React.Component {
     render() {
         return (
             <div className="Tile col-sm-4">
+              <Link className="nav-link" to={`/posts/${this.props.cat.id}`}>
                 <figure>
                     <div className="tile-img"
                       style={{backgroundImage: `url(${this.props.cat.imgUrl})`}}>
                         </div>
                     <figcaption>{this.props.cat.name}</figcaption>
                 </figure>
+              </Link>
             </div>
         );
     }

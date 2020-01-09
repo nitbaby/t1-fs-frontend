@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import CommentsList from './CommentsList'
+import axios from 'axios'
 const shortid = require('shortid');
 
 class CommentsSection extends React.Component {
@@ -9,23 +10,34 @@ class CommentsSection extends React.Component {
         this.state = {
           username: '',
           comment: '',
-          comments: [{
-            username: 'Nithin',
-            comment: 'lblabflabf fad asdg asdg dsl g'
-          },{
-            username: 'Joe',
-            comment: 'yoyoyo tooyoyo oy oyoy oyyo'
-          }]
+          comments: props.comments
       };
     }
     onAddCommentClick() {
-      this.setState({
-        comments: [...this.state.comments, {
-            username: this.state.username,
-            comment: this.state.comment
-          }
-        ]
-      });
+      this.setState({ savingComment: true });
+      const commentPostData = {
+        userName: this.state.username,
+        description: this.state.comment
+      }
+      const self = this;
+      axios.post(`https://t1-fs-backend.herokuapp.com//bulletinBoard/id/${this.props.postId}/comment`, commentPostData)
+        .then(function (response) {
+          self.setState({
+            comments: [...self.state.comments, {
+                username: self.state.username,
+                comment: self.state.comment
+              }
+            ],
+            username: '',
+            comment: ''
+          });
+          console.log(self.state);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .finally(() => this.setState({ savingComment: false }));
+
     }
     handleChangeUsername(event) {
         this.setState({ username: event.target.value });
@@ -35,6 +47,12 @@ class CommentsSection extends React.Component {
         this.setState({ comment: event.target.value });
     }
     render() {
+      let savingSection;
+      if (this.state.savingComment) {
+        savingSection = <div>Saving comment...</div>
+      } else {
+        savingSection = <button className="btn btn-primary" onClick={(e) => {this.onAddCommentClick(e)}}>Add Comment</button>
+      }
         return (
             <div className="container">
               <div className="row">
@@ -53,7 +71,7 @@ class CommentsSection extends React.Component {
                         value={this.state.comment}>
                       </textarea>
                     </div>
-                    <button className="btn btn-primary" onClick={(e) => {this.onAddCommentClick(e)}}>Add Comment</button>
+                      {savingSection}
                   </div>
               </div>
               <div className="row">

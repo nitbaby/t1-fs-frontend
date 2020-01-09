@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { selectPost } from '../actions'
 import PostsPanel from '../components/PostsPanel'
 import CommentsSection from '../components/CommentsSection'
-import categories from '../services/Categories'
+import categories from '../utils/Categories'
 
 class PostDetail extends React.Component {
     constructor(props) {
@@ -35,13 +35,13 @@ class PostDetail extends React.Component {
                           <label className="font-weight-bold">Description</label>
                           <p className="">{this.props.post.description}</p>
                           <label className="font-weight-bold">Category</label>
-                          <p><Link className="" to={"/category/"+this.props.post.category}>{category}</Link></p>
+                          <p><Link className="" to={"/posts/"+this.props.post.category}>{category}</Link></p>
                         </div>
                       </div>
 
                       <div className="row">
                         <div className="col-12">
-                          <CommentsSection/>
+                          <CommentsSection comments={this.props.post.comments} postId={this.props.post.id}/>
                         </div>
                       </div>
                     </div>

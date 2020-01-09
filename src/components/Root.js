@@ -16,7 +16,7 @@ const Root = ({ store }) => (
     <div>
       <Route path="/" component={App} />
       <Route path="/new" component={PostsPanelContainer} />
-      <Route path="/posts" component={PostsContainer} />
+      <Route path="/posts/:categoryId" component={PostsContainer} />
       <Route path="/post/:id" component={PostDetail} />
       <Route path="/categories" component={Categories} />
       <Route path="/about" component={About} />

@@ -7,7 +7,13 @@ class Posts extends React.Component {
     }
 
     componentDidMount() {
-      this.props.onFetchAllPosts()
+      const params = this.props.match.params;
+      const categoryId = parseInt(params.categoryId);
+      if (isFinite(categoryId)) {
+        this.props.onFetchAllPosts(categoryId);
+      } else {
+        this.props.onFetchAllPosts();
+      }
     }
 
     handlePostClick(postId) {
